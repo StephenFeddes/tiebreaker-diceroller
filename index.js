@@ -1,10 +1,10 @@
 // Wait for the DOM content to be fully loaded before executing the code
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Get references to HTML elements
-    const rollButton = document.getElementById("roll-btn");
-    const team1ResultDisplay = document.getElementById("team1-result");
-    const team2ResultDisplay = document.getElementById("team2-result");
-    const winnerDisplay = document.getElementById("winner-display");
+    const rollButton = document.getElementById('roll-btn');
+    const team1ResultDisplay = document.getElementById('team1-result');
+    const team2ResultDisplay = document.getElementById('team2-result');
+    const winnerDisplay = document.getElementById('winner-display');
 
     // Function to roll the dice and determine the winner
     function rollDice() {
@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Determine the winner based on the random numbers
         if (randomNumber1 === randomNumber2) {
-            winnerDisplay.textContent = "It's a tie! Roll again.";
+            winnerDisplay.textContent = 'It is a tie! Roll again.';
         } else if (randomNumber1 > randomNumber2) {
-            winnerDisplay.textContent = "Team 1 wins!";
+            winnerDisplay.textContent = 'Team 1 wins!';
         } else {
-            winnerDisplay.textContent = "Team 2 wins!";
+            winnerDisplay.textContent = 'Team 2 wins!';
         }
     }
 
