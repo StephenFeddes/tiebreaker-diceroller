@@ -1,0 +1,61 @@
+header h1 {
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+header p {
+    text-align: center;
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+#roll-btn {
+    margin-left: calc(50% - 60px);
+    background-color: rgb(100, 25, 220);
+    padding: 20px 50px 20px 50px;
+    color: white;
+}
+
+.teams {
+    margin-left: calc(50% - 280px);
+    margin-top: 25px;
+    padding: 25px;
+    width: 500px;
+    display: flex;
+    background-color: rgb(90, 100, 100);
+    border-radius: 20px;
+    border: 1px solid black;
+    justify-content: space-between;
+}
+
+.teams .team h2 {
+    text-align: center;
+}
+
+.teams .team p {
+    text-align: right;
+    font-size: 30px;
+}
+
+.teams .team {
+    width: 150px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.teams .team:first-child {
+    background-color: rgb(180, 50, 33);
+}
+
+.teams .team:nth-child(2) {
+    background-color: rgb(33, 100, 175);
+}
+
+#winner-display {
+    text-align: center;
+    font-size: 50px;
+
+}
