@@ -8,27 +8,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to roll the dice and determine the winner
     function rollDice() {
-        // Generate random numbers for each team
-        const randomNumber1 = Math.floor(Math.random() * 6) + 1;
-        const randomNumber2 = Math.floor(Math.random() * 6) + 1;
+        fetch('https://feddes-dice-roller-api.azurewebsites.net/roll')
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to fetch data');
+                }
+            })
+            .then((data) => {
+                const randomNumber1 = data[0];
+                const randomNumber2 = data[1];
 
-        // Display the results for each team
-        team1ResultDisplay.textContent = randomNumber1;
-        team2ResultDisplay.textContent = randomNumber2;
+                // Display the results for each team
+                team1ResultDisplay.textContent = randomNumber1;
+                team2ResultDisplay.textContent = randomNumber2;
 
-        // Determine the winner based on the random numbers
-        if (randomNumber1 === randomNumber2) {
-            winnerDisplay.textContent = 'It is a tie! Roll again.';
-        } else if (randomNumber1 > randomNumber2) {
-            winnerDisplay.textContent = 'Team 1 wins!';
-        } else {
-            winnerDisplay.textContent = 'Team 2 wins!';
-        }
+                // Determine the winner based on the random numbers
+                if (randomNumber1 === randomNumber2) {
+                    winnerDisplay.textContent = 'It is a tie! Roll again.';
+                } else if (randomNumber1 > randomNumber2) {
+                    winnerDisplay.textContent = 'Team 1 wins!';
+                } else {
+                    winnerDisplay.textContent = 'Team 2 wins!';
+                }
+            })
     }
 
     // Call the rollDice function when the page loads to display initial results
     rollDice();
 
     // Add event listener to the roll button to roll the dice when clicked
-    rollButton.addEventListener("click", rollDice);
+    rollButton.addEventListener('click', rollDice);
 });
